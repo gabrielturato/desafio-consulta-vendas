@@ -9,12 +9,12 @@ public class SaleReportDTO {
     Long id;
     LocalDate date;
     Double amount;
-    String name;
+    String sellerName;
 
     public SaleReportDTO(Long id, LocalDate date, String name, Double amount) {
         this.id = id;
         this.date = date;
-        this.name = name;
+        this.sellerName = name;
         this.amount = amount;
     }
 
@@ -24,7 +24,7 @@ public class SaleReportDTO {
     public SaleReportDTO(Sale sale) {
         this.id = sale.getId();
         this.date = sale.getDate();
-        this.name = sale.getSeller().getName();
+        this.sellerName = sale.getSeller().getName();
         this.amount = sale.getAmount();
     }
 
@@ -52,11 +52,11 @@ public class SaleReportDTO {
         this.amount = amount;
     }
 
-    public String getName() {
-        return name;
+    public String getSellerName() {
+        return sellerName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSellerName(String sellerName) {
+        this.sellerName = sellerName;
     }
 }
